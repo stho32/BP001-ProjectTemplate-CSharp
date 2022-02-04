@@ -28,6 +28,7 @@ dotnet new classlib
 dotnet add package Microsoft.NET.Test.Sdk
 dotnet add package xunit
 dotnet add package xunit.runner.visualstudio
+dotnet add package altcover
 cd ..
 
 mkdir $1.Infrastructure
