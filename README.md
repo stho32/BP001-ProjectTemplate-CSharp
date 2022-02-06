@@ -5,7 +5,7 @@ The project is based on these [Requirements](Documentation/requirements.md) and 
 ## Badges
 
 - [ ] Add a badge from the build workflow
-- [ ] Add a badge from CodeFactory
+- [ ] Add a badge from https://www.codefactor.io/
 - [ ] Add a badge from sonarcloud
     - [ ] Code coverage
     - [ ] Lines of code
