@@ -42,14 +42,5 @@ cd $ProjectName
 dotnet new sln
 dotnet new gitignore
 
-New-ClassLib -Name ($ProjectName + ".Persistence") -ToProject $ProjectName
-
 New-ClassLib ($ProjectName + ".Domain") -ToProject $ProjectName
 New-ClassLib ($ProjectName + ".Domain.Tests") -ToProject $ProjectName -ForUnitTesting
-
-New-ClassLib ($ProjectName + ".Interactors") -ToProject $ProjectName
-New-ClassLib ($ProjectName + ".Interactors.Tests") -ToProject $ProjectName -ForUnitTesting
-
-New-ClassLib ($ProjectName + ".Contracts") -ToProject $ProjectName
-New-ClassLib ($ProjectName + ".Contracts.Tests") -ToProject $ProjectName -ForUnitTesting
-
