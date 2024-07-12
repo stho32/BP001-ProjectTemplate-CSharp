@@ -2,6 +2,7 @@ on:
     push:
 
 env:
+    # ADAPT: Update these environment variables for your project
     DOTNET_VERSION: "8.0.x" # The .NET SDK version to use
     SOLUTION_DIR: "cleaner"
     PROJECT: "./cleaner/cleaner.csproj"
@@ -15,6 +16,7 @@ jobs:
             matrix:
                 os: [ubuntu-latest, windows-latest]
                 include:
+                    # ADAPT: Modify or add matrix configurations if needed
                     - os: ubuntu-latest
                       RUNTIMEID: linux-x64
                       OUTPUTDIR: cleaner-linux-x64
@@ -43,6 +45,7 @@ jobs:
               working-directory: Source/${{ env.SOLUTION_DIR }}
 
             - name: Publish
+              # ADAPT: Review and modify publish options if necessary
               run: dotnet publish ${{ env.PROJECT }} -c Release -o ${{matrix.OUTPUTDIR}} -p:PublishReadyToRun=true --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:UseAppHost=true -r ${{matrix.RUNTIMEID}}
               working-directory: Source/${{ env.SOLUTION_DIR }}
 
@@ -70,12 +73,14 @@ jobs:
             - name: Download Artifact
               uses: actions/download-artifact@v3
               with:
+                  # ADAPT: Update artifact names if changed in the build job
                   name: cleaner-linux-x64
                   path: ./artifacts
 
             - name: Download Artifact
               uses: actions/download-artifact@v3
               with:
+                  # ADAPT: Update artifact names if changed in the build job
                   name: cleaner-win-x64
                   path: ./artifacts
 
